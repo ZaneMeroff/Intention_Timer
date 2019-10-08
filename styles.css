@@ -1,0 +1,127 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat";
+  /* border: 1px solid red; */
+  color: white;
+}
+
+.clearfix:after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+body {
+  background-color: #2B2733;
+}
+
+header {
+  text-align: center;
+  background-color: #46424D;
+}
+
+h1 {
+  font-size: 140%;
+  padding: 1%;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.left-section {
+  background-color: #46424D;
+  width: 66%;
+  padding: 3% 7%;
+  margin: 4% 2%;
+  border-radius: 4px;
+}
+
+h2 {
+  display: inline-block;
+}
+
+button {
+  background-color: #46424D;
+  border: 1px solid white;
+  width: 20%;
+  height: 55px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding: 3%;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.catagory-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-bottom: 7%;
+}
+
+.study-button {
+  background-image: url("./assets/study.svg");
+}
+
+.meditate-button {
+  background-image: url("./assets/meditate.svg");
+}
+
+.exercise-button {
+  background-image: url("./assets/exercise.svg");
+}
+
+aside {
+    margin: 4% 2%;
+}
+
+.select-catagory-paragraph {
+  margin-bottom: 2%;
+}
+
+input {
+  background-color: #46424D;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: solid 1px white;
+  font-size: 16px;
+  padding-top: 2%;
+}
+
+.accomplish-input {
+  width: 100%;
+  margin-bottom: 7%;
+}
+
+.time-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.minutes-input,
+.seconds-input {
+  margin-top: 10%;
+  font-size: 16px;
+  width: 100%;
+}
+
+.start-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.start-activity-button {
+  margin-top: 5%;
+  width: 30%;
+  height: 10px;
+  background-color: white;
+  color: #2B2733;
+}
