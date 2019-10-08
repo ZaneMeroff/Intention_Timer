@@ -30,6 +30,17 @@ h1 {
   padding: 1%;
 }
 
+.h2-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-activity-container {
+  padding-top: 3%;
+  padding-left: 2%;
+  width: 300px;
+}
+
 main {
   display: flex;
   flex-direction: row;
@@ -40,7 +51,7 @@ main {
   background-color: #46424D;
   width: 66%;
   padding: 3% 7%;
-  margin: 4% 2%;
+  margin: 0% 2%;
   border-radius: 4px;
 }
 
@@ -83,8 +94,12 @@ h2 {
   background-image: url("./assets/exercise.svg");
 }
 
+.past-activities-heading {
+}
+
 aside {
-    margin: 4% 2%;
+    padding-top: 2%;
+    border-left: solid 2px #46424D;
 }
 
 .select-catagory-paragraph {
@@ -132,4 +147,5 @@ input {
   line-height: 5px;
   border-radius: 3px;
   padding: 1.5%;
+  font-size: 50%;
 }
