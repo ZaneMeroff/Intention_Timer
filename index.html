@@ -12,42 +12,43 @@
     </header>
     <section class="h2-container">
       <div class="new-activity-container">
-        <h2 class='new-activity-heading'>New Activity</h2>
+        <h2 class="new-activity-heading">New Activity</h2>
       </div>
     </section>
     <main>
-      <section class='left-section'>
-        <p class='select-catagory-paragraph'>Select a catagory:</p>
-        <div class='catagory-buttons'>
-          <button class='study-button' type="button">Study</button>
-          <button class='meditate-button' type="button">Meditate</button>
-          <button class='exercise-button' type="button">Exercise</button>
+      <section class="left-section">
+        <p class="select-catagory-paragraph">Select a catagory:</p>
+        <div class="catagory-container">
+          <button class="study-button" type="button">Study</button>
+          <button class="meditate-button" type="button">Meditate</button>
+          <button class="exercise-button" type="button">Exercise</button>
         </div>
-        <form class="" action="index.html" method="post">
+        <form>
           <p>What would you like to accomplish during this time?</p>
-          <input class='accomplish-input' type="text" value="">
-            <section class='time-input'>
-              <div class="">
+          <input class="accomplish-input" type="text">
+            <section class="time-container">
+              <div>
                 <p>Minutes</p>
-                <input class="minutes-input" type="text" value="">
+                <input class="minutes-input" type="number">
               </div>
               <div>
                 <p>Seconds</p>
-                <input class="seconds-input" type="text" value="">
+                <input class="seconds-input" type="number">
               </div>
             </section>
         </form>
-        <div class='start-button'>
-        <button class='start-activity-button' type="button">START ACTIVITY</button>
+        <div class="start-button-container">
+        <button class="start-activity-button" type="button">START ACTIVITY</button>
         </div>
         </section>
-      <aside class="">
+      <aside>
         <div class="past-activity-container">
-          <h2 class='past-activities-heading'>Past Activites</h2>
+          <h2 class="past-activities-heading">Past Activites</h2>
         </div>
         <p>You haven't logged any activites yet.</p>
         <p>Complete the form on the left to get started!</p>
       </aside>
     </main>
+    <script src="./main.js"></script>
   </body>
 </html>
