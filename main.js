@@ -8,6 +8,7 @@ studyButton.addEventListener("click", styleStudyButton);
 meditateButton.addEventListener("click", styleMeditateButton);
 exerciseButton.addEventListener("click", styleExerciseButton);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
+secondsInput.addEventListener("keydown", acceptNumbersOnly);
 
 function acceptNumbersOnly(event) {
   console.log(event)
