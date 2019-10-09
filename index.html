@@ -14,6 +14,9 @@
       <div class="new-activity-container">
         <h2 class="new-activity-heading">New Activity</h2>
       </div>
+      <div class="past-activity-container">
+        <h2 class="past-activities-heading">Past Activites</h2>
+      </div>
     </section>
     <main>
       <section class="left-section">
@@ -26,14 +29,17 @@
         <form>
           <p>What would you like to accomplish during this time?</p>
           <input class="accomplish-input" type="text">
+          <p class="warning-message" id="accomplish-error-message"><img class="warning" src="./assets/warning.svg" alt="warning icon">A description is required</p>
             <section class="time-container">
               <div>
-                <p>Minutes</p>
+                <p class="time-paragraph">Minutes</p>
                 <input class="minutes-input" type="number">
+                <p class="warning-message" id="minute-error-message"><img class="warning" src="./assets/warning.svg" alt="warning icon">A time is required</p>
               </div>
               <div>
-                <p>Seconds</p>
+                <p class="time-paragraph">Seconds</p>
                 <input class="seconds-input" type="number">
+                <p class="warning-message" id="second-error-message"><img class="warning" src="./assets/warning.svg" alt="warning icon">A time is required</p>
               </div>
             </section>
         </form>
@@ -42,9 +48,6 @@
         </div>
         </section>
       <aside>
-        <div class="past-activity-container">
-          <h2 class="past-activities-heading">Past Activites</h2>
-        </div>
         <p>You haven't logged any activites yet.</p>
         <p>Complete the form on the left to get started!</p>
       </aside>

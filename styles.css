@@ -23,40 +23,54 @@ body {
 header {
   text-align: center;
   background-color: #46424D;
+  margin: 0px;
 }
 
 h1 {
   font-size: 140%;
   padding: 1%;
-}
-
-h2 {
-  display: inline-block;
+  padding-bottom: 10px;
+  margin: auto;
 }
 
 .h2-container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  width:1420px;
 }
 
 .new-activity-container {
   padding-top: 3%;
   padding-left: 2%;
-  width: 300px;
+  margin-right: 30px;
+}
+
+.past-activity-container {
+  border-left: 2px solid #46424D;
+  padding-top: 3%;
+  width: 25.6%;
 }
 
 main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-left:auto;
+  margin-right:auto;
+  width:1420px;
+  height: 100%;
 }
 
 .left-section {
   background-color: #46424D;
-  width: 66%;
+  width: 66.2%;
   padding: 3% 7%;
-  margin: 0% 2%;
+  margin: 1% 2%;
   border-radius: 4px;
+  width: 65%;
 }
 
 .select-catagory-paragraph {
@@ -97,10 +111,6 @@ main {
   padding-bottom: 7%;
 }
 
-form:focus {
-  outline: 0;
-}
-
 input {
   background-color: #46424D;
   border-top: 0px;
@@ -111,6 +121,12 @@ input {
   padding-top: 2%;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .start-button-container {
   display: flex;
   justify-content: flex-end;
@@ -118,7 +134,6 @@ input {
 
 .accomplish-input {
   width: 100%;
-  margin-bottom: 7%;
 }
 
 .minutes-input,
@@ -126,6 +141,11 @@ input {
   margin-top: 10%;
   font-size: 16px;
   width: 100%;
+  -webkit-appearance: none;
+}
+
+.time-paragraph {
+  margin-top: 45px;
 }
 
 .time-container {
@@ -148,4 +168,34 @@ input {
 aside {
     padding-top: 2%;
     border-left: solid 2px #46424D;
+    padding: 2%;
+    width: 355px;
+}
+
+.styleStudyButton {
+  color: #B3FD78;
+  border-color: #B3FD78;
+  background-image: url(./assets/study-active.svg);
+}
+
+.styleMeditateButton {
+  color: #C278FD;
+  border-color: #C278FD;
+  background-image: url(./assets/meditate-active.svg);
+}
+
+.styleExerciseButton {
+  color: #FD8078;
+  border-color: #FD8078;
+  background-image: url(./assets/exercise-active.svg);
+}
+
+.warning {
+  width: 16px;
+  height: 16px;
+}
+
+.warning-message {
+  color: #EFB7EC;
+  visibility: hidden;
 }

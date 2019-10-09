@@ -1,14 +1,34 @@
+var activityButton = document.querySelector(".start-activity-button");
 var studyButton = document.querySelector(".study-button");
 var meditateButton = document.querySelector(".meditate-button");
 var exerciseButton = document.querySelector(".exercise-button");
 var minutesInput = document.querySelector(".minutes-input");
 var secondsInput = document.querySelector(".seconds-input");
+var accomplishInput = document.querySelector(".accomplish-input");
+var accomplishHiddenError = document.getElementById("accomplish-error-message");
+var minuteHiddenError = document.getElementById("minute-error-message");
+var secondHiddenError = document.getElementById("second-error-message")
 
+activityButton.addEventListener("click", onActivityButtonClick);
 studyButton.addEventListener("click", styleStudyButton);
 meditateButton.addEventListener("click", styleMeditateButton);
 exerciseButton.addEventListener("click", styleExerciseButton);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
+
+function onActivityButtonClick() {
+  errorMessage(accomplishInput, accomplishHiddenError);
+  errorMessage(minutesInput, minuteHiddenError);
+  errorMessage(secondsInput, secondHiddenError);
+}
+
+function errorMessage(input, error) {
+  if (input.value === "") {
+    error.style.visibility = "visible";
+  } else {
+    error.style.visibility = "hidden";
+  }
+}
 
 function acceptNumbersOnly(event) {
   console.log(event)
@@ -17,27 +37,20 @@ function acceptNumbersOnly(event) {
   }
 }
 
-
-function styleStudyButton(event) {
-  if (event.target.classList.contains("study-button")) {
-    studyButton.style.color = "#B3FD78";
-    studyButton.style.borderColor = "#B3FD78";
-    studyButton.style.backgroundImage = "url(./assets/study-active.svg)";
-  } else {
-    studyButton.style.color = "#FFFFF";
-    studyButton.style.borderColor = "#FFFFF";
-    studyButton.style.backgroundImage = "url(./assets/study.svg)";
+function styleStudyButton() {
+  if (studyButton.classList.contains("study-button")) {
+    studyButton.classList.toggle("styleStudyButton");
   }
 }
 
 function styleMeditateButton() {
-  meditateButton.style.color = "#C278FD";
-  meditateButton.style.borderColor = "#C278FD";
-  meditateButton.style.backgroundImage = "url(./assets/meditate-active.svg)";
+  if (meditateButton.classList.contains("meditate-button")) {
+    meditateButton.classList.toggle("styleMeditateButton");
+  }
 }
 
 function styleExerciseButton() {
-  exerciseButton.style.color = "#FD8078";
-  exerciseButton.style.borderColor = "#FD8078";
-  exerciseButton.style.backgroundImage = "url(./assets/exercise-active.svg)";
+  if (exerciseButton.classList.contains("exercise-button")) {
+    exerciseButton.classList.toggle("styleExerciseButton")
+  }
 }
