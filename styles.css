@@ -6,9 +6,9 @@
   color: white;
 }
 
-*:focus {
+/* *:focus {
   outline: 0;
-}
+} */
 
 .clearfix:after{
   content: '';
@@ -28,6 +28,10 @@ header {
 h1 {
   font-size: 140%;
   padding: 1%;
+}
+
+h2 {
+  display: inline-block;
 }
 
 .h2-container {
@@ -55,8 +59,8 @@ main {
   border-radius: 4px;
 }
 
-h2 {
-  display: inline-block;
+.select-catagory-paragraph {
+  margin-bottom: 2%;
 }
 
 .study-button,
@@ -74,14 +78,6 @@ h2 {
   border-radius: 3px;
 }
 
-.catagory-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  padding-bottom: 7%;
-}
-
 .study-button {
   background-image: url("./assets/study.svg");
 }
@@ -93,17 +89,16 @@ h2 {
 .exercise-button {
   background-image: url("./assets/exercise.svg");
 }
-
-.past-activities-heading {
+.catagory-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-bottom: 7%;
 }
 
-aside {
-    padding-top: 2%;
-    border-left: solid 2px #46424D;
-}
-
-.select-catagory-paragraph {
-  margin-bottom: 2%;
+form:focus {
+  outline: 0;
 }
 
 input {
@@ -116,15 +111,14 @@ input {
   padding-top: 2%;
 }
 
+.start-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .accomplish-input {
   width: 100%;
   margin-bottom: 7%;
-}
-
-.time-input {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .minutes-input,
@@ -134,9 +128,10 @@ input {
   width: 100%;
 }
 
-.start-button {
+.time-container {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .start-activity-button {
@@ -148,4 +143,9 @@ input {
   border-radius: 3px;
   padding: 1.5%;
   font-size: 50%;
+}
+
+aside {
+    padding-top: 2%;
+    border-left: solid 2px #46424D;
 }
