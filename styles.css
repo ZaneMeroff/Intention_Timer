@@ -33,6 +33,10 @@ h1 {
   margin: auto;
 }
 
+h2{
+  color: #CBC9CF;
+}
+
 .h2-container {
   display: flex;
   justify-content: space-between;
@@ -70,7 +74,6 @@ main {
   margin: 1% 2%;
   border-radius: 4px;
   width: 65%;
-  display: none;
 }
 
 .select-catagory-paragraph {
@@ -154,6 +157,7 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
 }
 
+.log-activity-button,
 .start-activity-button {
   margin-top: 5%;
   width: 20%;
@@ -207,9 +211,8 @@ aside {
   flex-direction: column;
   background-color: #46424D;
   padding: 3%;
-  width: 65%;
+  width: 74.3%;
   margin: 1% 2%;
-  
 }
 
 #countdown-timer {
@@ -224,8 +227,12 @@ aside {
   border-radius: 50%;
   width: 20%;
   height: 170px;
-  margin-bottom: 5%;
 }
+
+.log-activity-button {
+  font-size: 20px;
+}
+
 .hidden-screen {
-  /* display: none; */
+  display: none;
 }

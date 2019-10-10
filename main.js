@@ -8,35 +8,36 @@ var accomplishInput = document.querySelector(".accomplish-input");
 var accomplishHiddenError = document.getElementById("accomplish-error-message");
 var minuteHiddenError = document.getElementById("minute-error-message");
 var secondHiddenError = document.getElementById("second-error-message");
-var countdown;
-var button = document.getElementById("start-button");
-var timerMinutes = document.getElementById("")
-var userMinutes = document.getElementById("user-minutes");
-var userSeconds = document.getElementById("user-seconds");
-var timer = document.getElementById("countdown-timer");
+var newActivityHeader = document.querySelector(".new-activity-heading");
+var leftSection = document.querySelector(".left-section");
+var timerScreen = document.querySelector(".timer-screen");
 
-var counter = 0;
-var timeleft = 65;
+// var countdown;
+var startButton = document.getElementById("start-button");
 
-function convertSeconds(s) {
-  var min = floor (s / 60);
-  var sec = s % 60;
-  return nf(min,2) + ':' + nf(sec, 2);
-}
-
-function setup() {
-   timer.innerHTML(convertSeconds(timeleft - counter));
-
-   function timeIt() {
-     counter++;
-     timer.innerHTML(convertSeconds(timeleft - counter));
-   }
-   setInterval(timeIt, 1000);
-}
-
-
-
-
+// var timerMinutes = document.getElementById("")
+// var userMinutes = document.getElementById("user-minutes");
+// var userSeconds = document.getElementById("user-seconds");
+// var timer = document.getElementById("countdown-timer");
+//
+// var counter = 0;
+// var timeleft = 65;
+//
+// function convertSeconds(s) {
+//   var min = floor (s / 60);
+//   var sec = s % 60;
+//   return nf(min,2) + ':' + nf(sec, 2);
+// }
+//
+// function setup() {
+//    timer.innerHTML(convertSeconds(timeleft - counter));
+//
+//    function timeIt() {
+//      counter++;
+//      timer.innerHTML(convertSeconds(timeleft - counter));
+//    }
+//    setInterval(timeIt, 1000);
+// }
 
 
 // var countdown;
@@ -54,7 +55,7 @@ function setup() {
 //     }, 1000)
 // }
 
-// button.addEventListener("click", timer);
+// startButton.addEventListener("click", displayTimer);
 activityButton.addEventListener("click", onActivityButtonClick);
 studyButton.addEventListener("click", styleStudyButton);
 meditateButton.addEventListener("click", styleMeditateButton);
@@ -66,6 +67,8 @@ function onActivityButtonClick() {
   errorMessage(accomplishInput, accomplishHiddenError);
   errorMessage(minutesInput, minuteHiddenError);
   errorMessage(secondsInput, secondHiddenError);
+  displayTimer();
+  // switchHeading();
 }
 
 // function timer(seconds) {
@@ -83,8 +86,12 @@ function onActivityButtonClick() {
 // }
 
 
-
-
+// function switchHeading() {
+//   if (newActivityHeader.classList.contains("new-activity-heading")) {
+//     newActivityHeader.innerHTML = "Current Activity"
+//     newActivityHeader.style.color = #CBC9CF;
+//   }
+// }
 
 
 function errorMessage(input, error) {
@@ -103,19 +110,29 @@ function acceptNumbersOnly(event) {
 }
 
 function styleStudyButton() {
-  if (studyButton.classList.contains("study-button")) {
     studyButton.classList.toggle("styleStudyButton");
-  }
+    meditateButton.classList.remove("styleMeditateButton");
+    exerciseButton.classList.remove("styleExerciseButton");
+    startButton.style.borderColor = "#B3FD78";
 }
 
 function styleMeditateButton() {
-  if (meditateButton.classList.contains("meditate-button")) {
     meditateButton.classList.toggle("styleMeditateButton");
-  }
+    studyButton.classList.remove("styleStudyButton");
+    exerciseButton.classList.remove("styleExerciseButton");
+    startButton.style.borderColor = "#C278FD";
 }
 
 function styleExerciseButton() {
-  if (exerciseButton.classList.contains("exercise-button")) {
-    exerciseButton.classList.toggle("styleExerciseButton")
+    exerciseButton.classList.toggle("styleExerciseButton");
+    studyButton.classList.remove("styleStudyButton");
+    meditateButton.classList.remove("styleMeditateButton");
+    startButton.style.borderColor = "#FD8078";
+}
+
+function displayTimer() {
+  if (accomplishInput.value && minutesInput.value && secondsInput.value) {
+  timerScreen.classList.remove("hidden-screen");
+  leftSection.classList.add("hidden-screen");
   }
 }
