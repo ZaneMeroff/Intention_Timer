@@ -60,17 +60,17 @@ main {
   justify-content: space-around;
   margin-left:auto;
   margin-right:auto;
-  width:1420px;
+  width: 1420px;
   height: 100%;
 }
 
 .left-section {
   background-color: #46424D;
-  width: 66.2%;
   padding: 3% 7%;
   margin: 1% 2%;
   border-radius: 4px;
   width: 65%;
+  display: none;
 }
 
 .select-catagory-paragraph {
@@ -198,4 +198,34 @@ aside {
 .warning-message {
   color: #EFB7EC;
   visibility: hidden;
+}
+
+.timer-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #46424D;
+  padding: 3%;
+  width: 65%;
+  margin: 1% 2%;
+  
+}
+
+#countdown-timer {
+  font-size: 200%;
+  margin-bottom: 5%;
+}
+
+#start-button {
+  background-color: #46424D;
+  font-size: 100%;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 20%;
+  height: 170px;
+  margin-bottom: 5%;
+}
+.hidden-screen {
+  /* display: none; */
 }
