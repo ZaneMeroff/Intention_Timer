@@ -33,12 +33,12 @@
             <section class="time-container">
               <div>
                 <p class="time-paragraph">Minutes</p>
-                <input class="minutes-input" type="number">
+                <input id="user-minutes" class="minutes-input" type="number">
                 <p class="warning-message" id="minute-error-message"><img class="warning" src="./assets/warning.svg" alt="warning icon">A time is required</p>
               </div>
               <div>
                 <p class="time-paragraph">Seconds</p>
-                <input class="seconds-input" type="number">
+                <input id="user-seconds" class="seconds-input" type="number">
                 <p class="warning-message" id="second-error-message"><img class="warning" src="./assets/warning.svg" alt="warning icon">A time is required</p>
               </div>
             </section>
@@ -47,10 +47,18 @@
         <button class="start-activity-button" type="button">START ACTIVITY</button>
         </div>
         </section>
+        <section class="timer-screen hidden-screen">
+          <p id="user-accomplish-input"></p>
+          <p id="countdown-timer"></p>
+          <button type="button" id="start-button">START</button>
+        </section>
       <aside>
         <p>You haven't logged any activites yet.</p>
         <p>Complete the form on the left to get started!</p>
       </aside>
+
+
+
     </main>
     <script src="./main.js"></script>
   </body>
