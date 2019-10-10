@@ -11,51 +11,14 @@ var secondHiddenError = document.getElementById("second-error-message");
 var newActivityHeader = document.querySelector(".new-activity-heading");
 var leftSection = document.querySelector(".left-section");
 var timerScreen = document.querySelector(".timer-screen");
-
-// var countdown;
 var startButton = document.getElementById("start-button");
+var accomplishText = document.getElementById("user-accomplish-input");
+var startingMinutes;
+var startingSeconds;
+var minutesDisplay = document.getElementById("minutes-display");
+var secondsDisplay = document.getElementById("seconds-display");
 
-// var timerMinutes = document.getElementById("")
-// var userMinutes = document.getElementById("user-minutes");
-// var userSeconds = document.getElementById("user-seconds");
-// var timer = document.getElementById("countdown-timer");
-//
-// var counter = 0;
-// var timeleft = 65;
-//
-// function convertSeconds(s) {
-//   var min = floor (s / 60);
-//   var sec = s % 60;
-//   return nf(min,2) + ':' + nf(sec, 2);
-// }
-//
-// function setup() {
-//    timer.innerHTML(convertSeconds(timeleft - counter));
-//
-//    function timeIt() {
-//      counter++;
-//      timer.innerHTML(convertSeconds(timeleft - counter));
-//    }
-//    setInterval(timeIt, 1000);
-// }
-
-
-// var countdown;
-// function timer() {
-//   var milla = userSeconds.value * 1000;
-//     countdown = setInterval(function() {
-//       if (milla <= 0) {
-//         clearInterval(countdown)
-//         return;
-//       }
-//       // var timerDisplay = document.querySel
-//       milla -= 1000
-//       // timerDisplay.innerHTML(`${milla}`)
-//       console.log(milla)
-//     }, 1000)
-// }
-
-// startButton.addEventListener("click", displayTimer);
+startButton.addEventListener("click", handleTimerStart);
 activityButton.addEventListener("click", onActivityButtonClick);
 studyButton.addEventListener("click", styleStudyButton);
 meditateButton.addEventListener("click", styleMeditateButton);
@@ -68,31 +31,33 @@ function onActivityButtonClick() {
   errorMessage(minutesInput, minuteHiddenError);
   errorMessage(secondsInput, secondHiddenError);
   displayTimer();
-  // switchHeading();
+  changeNewActivityHeading();
+  populateDesiredAccomplishment();
+  startingMinutes = parseInt(minutesInput.value);
+  startingSeconds = parseInt(secondsInput.value);
 }
 
-// function timer(seconds) {
-//   var now = Date.now();
-//   var then = (now + seconds) * 1000;
-//
-//   countdown = setInterval(() => {
-//     var secondsLeft = Math.round((then - Date.now()) / 1000);
-//     if (secondsLeft = 0) {
-//       clearInterval(countdown);
-//       return;
-//     }
-//     console.log(secondsLeft);
-//   }, 1000);
-// }
+function handleTimerStart() {
+   timer();
+}
 
-
-// function switchHeading() {
-//   if (newActivityHeader.classList.contains("new-activity-heading")) {
-//     newActivityHeader.innerHTML = "Current Activity"
-//     newActivityHeader.style.color = #CBC9CF;
-//   }
-// }
-
+function timer() {
+  var remainingSeconds = startingSeconds;
+  var remainingMinutes = startingMinutes;
+  var countdown = setInterval(function() {
+    if (remainingSeconds <= 0 && remainingMinutes <= 0) {
+      clearInterval(countdown)
+      return;
+    }
+      remainingSeconds -= 1
+      if (remainingSeconds < 0) {
+         remainingMinutes -= 1
+         remainingSeconds = 59
+      }
+      minutesDisplay.innerText = remainingMinutes;
+      secondsDisplay.innerText = remainingSeconds;
+    }, 1000);
+}
 
 function errorMessage(input, error) {
   if (input.value === "") {
@@ -135,4 +100,12 @@ function displayTimer() {
   timerScreen.classList.remove("hidden-screen");
   leftSection.classList.add("hidden-screen");
   }
+}
+
+function changeNewActivityHeading() {
+  newActivityHeader.innerHTML = "Current Activity";
+}
+
+function populateDesiredAccomplishment() {
+  accomplishText.innerHTML = accomplishInput.value ;
 }
