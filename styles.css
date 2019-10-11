@@ -213,6 +213,7 @@ aside {
   padding: 3%;
   width: 74.3%;
   margin: 1% 2%;
+  padding-bottom: 12%;
 }
 
 #countdown-timer {
@@ -227,6 +228,7 @@ aside {
   border-radius: 50%;
   width: 20%;
   height: 170px;
+
 }
 
 .log-activity-button {

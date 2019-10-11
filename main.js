@@ -33,6 +33,7 @@ function onActivityButtonClick() {
   displayTimer();
   changeNewActivityHeading();
   populateDesiredAccomplishment();
+  displayTime();
   startingMinutes = parseInt(minutesInput.value);
   startingSeconds = parseInt(secondsInput.value);
 }
@@ -47,6 +48,7 @@ function timer() {
   var countdown = setInterval(function() {
     if (remainingSeconds <= 0 && remainingMinutes <= 0) {
       clearInterval(countdown)
+      alert("Yo shit is done, Biatch!!!")
       return;
     }
       remainingSeconds -= 1
@@ -54,10 +56,25 @@ function timer() {
          remainingMinutes -= 1
          remainingSeconds = 59
       }
-      minutesDisplay.innerText = remainingMinutes;
-      secondsDisplay.innerText = remainingSeconds;
+      minutesDisplay.innerText = addZeroToTimer(remainingMinutes);
+      secondsDisplay.innerText = addZeroToTimer(remainingSeconds);
     }, 1000);
 }
+
+function addZeroToTimer(time) {
+  if(time < 10) {
+    time = "0" + time;
+  } else {
+    time;
+  }
+  return time;
+}
+
+function displayTime() {
+  minutesDisplay.innerText = addZeroToTimer(minutesInput.value);
+  secondsDisplay.innerText = addZeroToTimer(secondsInput.value);
+}
+
 
 function errorMessage(input, error) {
   if (input.value === "") {
@@ -103,9 +120,9 @@ function displayTimer() {
 }
 
 function changeNewActivityHeading() {
-  newActivityHeader.innerHTML = "Current Activity";
+  newActivityHeader.innerText = "Current Activity";
 }
 
 function populateDesiredAccomplishment() {
-  accomplishText.innerHTML = accomplishInput.value ;
+  accomplishText.innerText = accomplishInput.value ;
 }
