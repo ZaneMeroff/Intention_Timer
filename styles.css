@@ -217,18 +217,19 @@ aside {
 }
 
 #countdown-timer {
-  font-size: 200%;
-  margin-bottom: 5%;
+  font-size: 450%;
+  font-weight: bold;
+  margin-bottom: 3%;
 }
 
 #start-button {
   background-color: #46424D;
-  font-size: 100%;
+  font-size: 150%;
   border: 2px solid white;
   border-radius: 50%;
-  width: 20%;
-  height: 170px;
-
+  width: 25%;
+  height: 230px;
+  outline: none;
 }
 
 .log-activity-button {

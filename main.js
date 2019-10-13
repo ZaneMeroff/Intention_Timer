@@ -41,6 +41,12 @@ function onActivityButtonClick() {
 function handleTimerStart() {
    timer();
 }
+//    stop();
+// }
+//
+// function stop() {
+//   e.startButton.removeEventListener("click", stop)
+// }
 
 function timer() {
   var remainingSeconds = startingSeconds;
@@ -48,13 +54,20 @@ function timer() {
   var countdown = setInterval(function() {
     if (remainingSeconds <= 0 && remainingMinutes <= 0) {
       clearInterval(countdown)
-      alert("Yo shit is done, Biatch!!!")
+      alert("Time is up!")
+      startButton.innerText = "COMPLETE!";
       return;
     }
       remainingSeconds -= 1
       if (remainingSeconds < 0) {
          remainingMinutes -= 1
          remainingSeconds = 59
+      }
+      if (remainingSeconds > 59) {
+         var additionalSeconds = (remainingSeconds % 60)
+         remainingSeconds = additionalSeconds;
+         var additionalMinutes = (remainingSeconds / 60)
+         remainingMinutes = (remainingMinutes + 1);
       }
       minutesDisplay.innerText = addZeroToTimer(remainingMinutes);
       secondsDisplay.innerText = addZeroToTimer(remainingSeconds);
