@@ -17,6 +17,10 @@ var startingMinutes;
 var startingSeconds;
 var minutesDisplay = document.getElementById("minutes-display");
 var secondsDisplay = document.getElementById("seconds-display");
+var countdownTimerText = document.getElementById("countdown-timer");
+var congratsMessage = document.getElementById("congrats-message");
+var logActivityButton = document.getElementById("log-activity-button");
+
 
 startButton.addEventListener("click", handleTimerStart);
 activityButton.addEventListener("click", onActivityButtonClick);
@@ -56,6 +60,10 @@ function timer() {
       clearInterval(countdown)
       alert("Time is up!")
       startButton.innerText = "COMPLETE!";
+      accomplishText.classList.add("hidden-screen");
+      countdownTimerText.classList.add("hidden-screen");
+      congratsMessage.classList.remove("hidden-screen");
+      logActivityButton.classList.remove("hidden-screen");
       return;
     }
       remainingSeconds -= 1

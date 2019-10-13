@@ -27,6 +27,7 @@ header {
 }
 
 h1 {
+  color: #CBC9CF;
   font-size: 140%;
   padding: 1%;
   padding-bottom: 10px;
@@ -157,7 +158,7 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
 }
 
-.log-activity-button,
+#log-activity-button,
 .start-activity-button {
   margin-top: 5%;
   width: 20%;
@@ -213,7 +214,7 @@ aside {
   padding: 3%;
   width: 74.3%;
   margin: 1% 2%;
-  padding-bottom: 12%;
+  padding-bottom: 7%;
 }
 
 #countdown-timer {
@@ -243,3 +244,13 @@ aside {
 #user-accomplish-input {
   font-size: 20px;
 }
+
+#congrats-message {
+   font-size: 200%;
+   font-weight: bold;
+   margin-bottom: 5%;
+ }
+
+ #log-activity-button {
+   font-size: 110%;
+ }
