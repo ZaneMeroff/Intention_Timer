@@ -10,6 +10,7 @@ var meditateButton = document.querySelector(".meditate-button");
 var minutesDisplay = document.getElementById("minutes-display");
 var minuteHiddenError = document.getElementById("minute-error-message");
 var minutesInput = document.querySelector(".minutes-input");
+var leftSection = document.querySelector(".left-section");
 var secondHiddenError = document.getElementById("second-error-message");
 var secondsDisplay = document.getElementById("seconds-display");
 var secondsInput = document.querySelector(".seconds-input");
@@ -17,6 +18,10 @@ var startButton = document.getElementById("start-button");
 var startingMinutes;
 var startingSeconds;
 var studyButton = document.querySelector(".study-button");
+var timerScreen = document.querySelector(".timer-screen");
+var newActivityButton = document.querySelector(".create-new-activity-button");
+var newActivityHeader = document.querySelector(".new-activity-heading");
+var completedActivityScreen = document.querySelector(".create-new-activity-screen");
 
 activityButton.addEventListener("click", onActivityButtonClick);
 exerciseButton.addEventListener("click", styleExerciseButton);
@@ -26,6 +31,7 @@ minutesInput.addEventListener("keydown", acceptNumbersOnly);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
 startButton.addEventListener("click", onStartClick);
 studyButton.addEventListener("click", styleStudyButton);
+newActivityButton.addEventListener("click", showNewActivityScreen);
 
 function onActivityButtonClick() {
   errorMessage(accomplishInput, accomplishHiddenError);
@@ -42,6 +48,7 @@ function onActivityButtonClick() {
 function onLogActivityClick() {
    createLogCard();
    styleChosenCatagory();
+   showCompletedActivityScreen();
 }
 
  function onStartClick() {
@@ -55,6 +62,19 @@ function onLogActivityClick() {
 //    activityButton.disabled = true;
 //   }
 // }
+
+function showCompletedActivityScreen() {
+  completedActivityScreen.classList.remove("hidden-screen");
+  timerScreen.classList.add("hidden-screen");
+  newActivityHeader.innerText = "Completed Activity";
+}
+
+function showNewActivityScreen() {
+  completedActivityScreen.classList.add("hidden-screen");
+  leftSection.classList.remove("hidden-screen");
+  newActivityHeader.innerText = "New Activity";
+
+}
 
 function createLogCard() {
   var asideContainer = document.getElementById("aside-container");
@@ -164,8 +184,6 @@ function styleExerciseButton() {
 }
 
 function displayTimer() {
-  var timerScreen = document.querySelector(".timer-screen");
-  var leftSection = document.querySelector(".left-section");
   if (accomplishInput.value && minutesInput.value && secondsInput.value) {
   timerScreen.classList.remove("hidden-screen");
   leftSection.classList.add("hidden-screen");
@@ -173,7 +191,6 @@ function displayTimer() {
 }
 
 function changeNewActivityHeading() {
-  var newActivityHeader = document.querySelector(".new-activity-heading");
   newActivityHeader.innerText = "Current Activity";
 }
 
