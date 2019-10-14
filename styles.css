@@ -256,8 +256,18 @@ aside {
  }
 
  .log-activity-card {
-   height: 70px;
+   height: 62px;
    width: 100%;
+   margin-top: 10px;
    background-color: #46424D;
    border-radius: 5px;
+   padding: 1%;
+ }
+
+ .card-catagory {
+   font-weight: bold;
+ }
+
+ .card-time {
+   margin-bottom: 1%;
  }

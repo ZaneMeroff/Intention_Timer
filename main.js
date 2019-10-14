@@ -23,6 +23,7 @@ var logActivityButton = document.getElementById("log-activity-button");
 var asideContainer = document.getElementById("aside-container");
 var asideParagraph1 = document.getElementById("aside-paragraph1");
 var asideParagraph2 = document.getElementById("aside-paragraph2");
+var chosenCatagory = "";
 
 startButton.addEventListener("click", handleTimerStart);
 activityButton.addEventListener("click", onActivityButtonClick);
@@ -64,7 +65,7 @@ function createLogCard() {
   asideParagraph2.classList.add("hidden-screen");
   asideContainer.innerHTML += `
   <div class="log-activity-card">
-    <p class="card-catagory"></p>
+    <p class="card-catagory">${chosenCatagory}</p>
     <p class="card-time">${startingMinutes} MIN ${startingSeconds} SECONDS</p>
     <p class="card-accomplishment">${accomplishInput.value}</p>
   </div>`
@@ -76,7 +77,6 @@ function timer() {
   var countdown = setInterval(function() {
     if (remainingSeconds <= 0 && remainingMinutes <= 0) {
       clearInterval(countdown)
-      alert("Time is up!")
       startButton.innerText = "COMPLETE!";
       accomplishText.classList.add("hidden-screen");
       countdownTimerText.classList.add("hidden-screen");
@@ -135,6 +135,7 @@ function styleStudyButton() {
     meditateButton.classList.remove("styleMeditateButton");
     exerciseButton.classList.remove("styleExerciseButton");
     startButton.style.borderColor = "#B3FD78";
+    chosenCatagory = "Study";
 }
 
 function styleMeditateButton() {
@@ -142,6 +143,7 @@ function styleMeditateButton() {
     studyButton.classList.remove("styleStudyButton");
     exerciseButton.classList.remove("styleExerciseButton");
     startButton.style.borderColor = "#C278FD";
+    chosenCatagory = "Meditate";
 }
 
 function styleExerciseButton() {
@@ -149,6 +151,7 @@ function styleExerciseButton() {
     studyButton.classList.remove("styleStudyButton");
     meditateButton.classList.remove("styleMeditateButton");
     startButton.style.borderColor = "#FD8078";
+    chosenCatagory = "Exercise";
 }
 
 function displayTimer() {
