@@ -59,6 +59,10 @@ h2{
   width: 28.35%;
 }
 
+.past-activities-heading {
+  margin-left: 7%;
+}
+
 main {
   display: flex;
   flex-direction: row;
@@ -262,10 +266,14 @@ aside {
    background-color: #46424D;
    border-radius: 5px;
    padding: 1%;
+   padding-top: 2%;
+   padding-right: 3%;
  }
 
  .card-catagory {
    font-weight: bold;
+   border-right: 3px solid white;
+   border-radius: 2px;
  }
 
  .card-time {
