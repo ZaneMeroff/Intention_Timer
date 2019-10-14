@@ -24,8 +24,9 @@ var asideContainer = document.getElementById("aside-container");
 var asideParagraph1 = document.getElementById("aside-paragraph1");
 var asideParagraph2 = document.getElementById("aside-paragraph2");
 var chosenCatagory = "";
+var disableStartButton = document.querySelector(".disable");
 
-startButton.addEventListener("click", handleTimerStart);
+startButton.addEventListener("click", onStartClick);
 activityButton.addEventListener("click", onActivityButtonClick);
 studyButton.addEventListener("click", styleStudyButton);
 meditateButton.addEventListener("click", styleMeditateButton);
@@ -51,15 +52,10 @@ function onLogActivityClick() {
    styleChosenCatagory();
 }
 
-function handleTimerStart() {
-   timer();
-}
-//    stop();
-// }
-//
-// function stop() {
-//   e.startButton.removeEventListener("click", stop)
-// }
+ function onStartClick() {
+   timer()
+   disableStartButton.disabled = true;
+ }
 
 function createLogCard() {
   asideParagraph1.classList.add("hidden-screen");
