@@ -17,6 +17,12 @@ var startingMinutes;
 var startingSeconds;
 var minutesDisplay = document.getElementById("minutes-display");
 var secondsDisplay = document.getElementById("seconds-display");
+var countdownTimerText = document.getElementById("countdown-timer");
+var congratsMessage = document.getElementById("congrats-message");
+var logActivityButton = document.getElementById("log-activity-button");
+var asideContainer = document.getElementById("aside-container");
+var asideParagraph1 = document.getElementById("aside-paragraph1");
+var asideParagraph2 = document.getElementById("aside-paragraph2");
 
 startButton.addEventListener("click", handleTimerStart);
 activityButton.addEventListener("click", onActivityButtonClick);
@@ -25,6 +31,7 @@ meditateButton.addEventListener("click", styleMeditateButton);
 exerciseButton.addEventListener("click", styleExerciseButton);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
+logActivityButton.addEventListener("click", onLogActivityClick);
 
 function onActivityButtonClick() {
   errorMessage(accomplishInput, accomplishHiddenError);
@@ -38,8 +45,29 @@ function onActivityButtonClick() {
   startingSeconds = parseInt(secondsInput.value);
 }
 
+function onLogActivityClick() {
+   createLogCard();
+}
+
 function handleTimerStart() {
    timer();
+}
+//    stop();
+// }
+//
+// function stop() {
+//   e.startButton.removeEventListener("click", stop)
+// }
+
+function createLogCard() {
+  asideParagraph1.classList.add("hidden-screen");
+  asideParagraph2.classList.add("hidden-screen");
+  asideContainer.innerHTML += `
+  <div class="log-activity-card">
+    <p class="card-catagory"></p>
+    <p class="card-time">${startingMinutes} MIN ${startingSeconds} SECONDS</p>
+    <p class="card-accomplishment">${accomplishInput.value}</p>
+  </div>`
 }
 
 function timer() {
@@ -48,13 +76,24 @@ function timer() {
   var countdown = setInterval(function() {
     if (remainingSeconds <= 0 && remainingMinutes <= 0) {
       clearInterval(countdown)
-      alert("Yo shit is done, Biatch!!!")
+      alert("Time is up!")
+      startButton.innerText = "COMPLETE!";
+      accomplishText.classList.add("hidden-screen");
+      countdownTimerText.classList.add("hidden-screen");
+      congratsMessage.classList.remove("hidden-screen");
+      logActivityButton.classList.remove("hidden-screen");
       return;
     }
       remainingSeconds -= 1
       if (remainingSeconds < 0) {
          remainingMinutes -= 1
          remainingSeconds = 59
+      }
+      if (remainingSeconds > 59) {
+         var additionalSeconds = (remainingSeconds % 60)
+         remainingSeconds = additionalSeconds;
+         var additionalMinutes = (remainingSeconds / 60)
+         remainingMinutes = (remainingMinutes + 1);
       }
       minutesDisplay.innerText = addZeroToTimer(remainingMinutes);
       secondsDisplay.innerText = addZeroToTimer(remainingSeconds);
