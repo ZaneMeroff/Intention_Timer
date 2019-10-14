@@ -48,6 +48,7 @@ function onActivityButtonClick() {
 
 function onLogActivityClick() {
    createLogCard();
+   styleChosenCatagory();
 }
 
 function handleTimerStart() {
@@ -69,6 +70,17 @@ function createLogCard() {
     <p class="card-time">${startingMinutes} MIN ${startingSeconds} SECONDS</p>
     <p class="card-accomplishment">${accomplishInput.value}</p>
   </div>`
+}
+
+function styleChosenCatagory() {
+  var cardCatatgoryBorder = document.querySelector(".card-catagory");
+  if (chosenCatagory === "Study") {
+  cardCatatgoryBorder.style.borderColor = "#B3FD78";
+  } else if (chosenCatagory === "Meditate") {
+  cardCatatgoryBorder.style.borderColor = "#C278FD";
+  } else {
+    cardCatatgoryBorder.style.borderColor = "#FD8078";
+   }
 }
 
 function timer() {
