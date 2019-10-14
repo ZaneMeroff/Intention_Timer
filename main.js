@@ -22,6 +22,7 @@ var timerScreen = document.querySelector(".timer-screen");
 var newActivityButton = document.querySelector(".create-new-activity-button");
 var newActivityHeader = document.querySelector(".new-activity-heading");
 var completedActivityScreen = document.querySelector(".create-new-activity-screen");
+var clearForm = document.getElementById("clear-form");
 
 activityButton.addEventListener("click", onActivityButtonClick);
 exerciseButton.addEventListener("click", styleExerciseButton);
@@ -73,7 +74,10 @@ function showNewActivityScreen() {
   completedActivityScreen.classList.add("hidden-screen");
   leftSection.classList.remove("hidden-screen");
   newActivityHeader.innerText = "New Activity";
-
+  clearForm.reset();
+  studyButton.classList.remove("styleStudyButton");
+  meditateButton.classList.remove("styleMeditateButton");
+  exerciseButton.classList.remove("styleExerciseButton");
 }
 
 function createLogCard() {
