@@ -1,46 +1,38 @@
-var activityButton = document.querySelector(".start-activity-button");
-var studyButton = document.querySelector(".study-button");
-var meditateButton = document.querySelector(".meditate-button");
-var exerciseButton = document.querySelector(".exercise-button");
-var minutesInput = document.querySelector(".minutes-input");
-var secondsInput = document.querySelector(".seconds-input");
-var accomplishInput = document.querySelector(".accomplish-input");
 var accomplishHiddenError = document.getElementById("accomplish-error-message");
-var minuteHiddenError = document.getElementById("minute-error-message");
-var secondHiddenError = document.getElementById("second-error-message");
-var newActivityHeader = document.querySelector(".new-activity-heading");
-var leftSection = document.querySelector(".left-section");
-var timerScreen = document.querySelector(".timer-screen");
-var startButton = document.getElementById("start-button");
+var accomplishInput = document.querySelector(".accomplish-input");
 var accomplishText = document.getElementById("user-accomplish-input");
+var activityButton = document.querySelector(".start-activity-button");
+var chosenCatagory = "";
+var congratsMessage = document.getElementById("congrats-message");
+var exerciseButton = document.querySelector(".exercise-button");
+var logActivityButton = document.getElementById("log-activity-button");
+var meditateButton = document.querySelector(".meditate-button");
+var minutesDisplay = document.getElementById("minutes-display");
+var minuteHiddenError = document.getElementById("minute-error-message");
+var minutesInput = document.querySelector(".minutes-input");
+var secondHiddenError = document.getElementById("second-error-message");
+var secondsDisplay = document.getElementById("seconds-display");
+var secondsInput = document.querySelector(".seconds-input");
+var startButton = document.getElementById("start-button");
 var startingMinutes;
 var startingSeconds;
-var minutesDisplay = document.getElementById("minutes-display");
-var secondsDisplay = document.getElementById("seconds-display");
-var countdownTimerText = document.getElementById("countdown-timer");
-var congratsMessage = document.getElementById("congrats-message");
-var logActivityButton = document.getElementById("log-activity-button");
-var asideContainer = document.getElementById("aside-container");
-var asideParagraph1 = document.getElementById("aside-paragraph1");
-var asideParagraph2 = document.getElementById("aside-paragraph2");
-var chosenCatagory = "";
-var disableStartButton = document.querySelector(".disable");
+var studyButton = document.querySelector(".study-button");
 
-startButton.addEventListener("click", onStartClick);
 activityButton.addEventListener("click", onActivityButtonClick);
-studyButton.addEventListener("click", styleStudyButton);
-meditateButton.addEventListener("click", styleMeditateButton);
 exerciseButton.addEventListener("click", styleExerciseButton);
+logActivityButton.addEventListener("click", onLogActivityClick);
+meditateButton.addEventListener("click", styleMeditateButton);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
-logActivityButton.addEventListener("click", onLogActivityClick);
+startButton.addEventListener("click", onStartClick);
+studyButton.addEventListener("click", styleStudyButton);
 
 function onActivityButtonClick() {
   errorMessage(accomplishInput, accomplishHiddenError);
   errorMessage(minutesInput, minuteHiddenError);
   errorMessage(secondsInput, secondHiddenError);
-  displayTimer();
   changeNewActivityHeading();
+  displayTimer();
   populateDesiredAccomplishment();
   displayTime();
   startingMinutes = parseInt(minutesInput.value);
@@ -54,10 +46,20 @@ function onLogActivityClick() {
 
  function onStartClick() {
    timer()
+   var disableStartButton = document.querySelector(".disable");
    disableStartButton.disabled = true;
  }
 
+// function checkForCatagorySelection() {
+//   if (studyButton.classList.contains("???????")) {
+//    activityButton.disabled = true;
+//   }
+// }
+
 function createLogCard() {
+  var asideContainer = document.getElementById("aside-container");
+  var asideParagraph1 = document.getElementById("aside-paragraph1");
+  var asideParagraph2 = document.getElementById("aside-paragraph2");
   asideParagraph1.classList.add("hidden-screen");
   asideParagraph2.classList.add("hidden-screen");
   asideContainer.innerHTML += `
@@ -80,6 +82,7 @@ function styleChosenCatagory() {
 }
 
 function timer() {
+  var countdownTimerText = document.getElementById("countdown-timer");
   var remainingSeconds = startingSeconds;
   var remainingMinutes = startingMinutes;
   var countdown = setInterval(function() {
@@ -122,7 +125,6 @@ function displayTime() {
   secondsDisplay.innerText = addZeroToTimer(secondsInput.value);
 }
 
-
 function errorMessage(input, error) {
   if (input.value === "") {
     error.style.visibility = "visible";
@@ -132,7 +134,6 @@ function errorMessage(input, error) {
 }
 
 function acceptNumbersOnly(event) {
-  console.log(event)
   if (event.keyCode === 69) {
     event.preventDefault();
   }
@@ -163,6 +164,8 @@ function styleExerciseButton() {
 }
 
 function displayTimer() {
+  var timerScreen = document.querySelector(".timer-screen");
+  var leftSection = document.querySelector(".left-section");
   if (accomplishInput.value && minutesInput.value && secondsInput.value) {
   timerScreen.classList.remove("hidden-screen");
   leftSection.classList.add("hidden-screen");
@@ -170,6 +173,7 @@ function displayTimer() {
 }
 
 function changeNewActivityHeading() {
+  var newActivityHeader = document.querySelector(".new-activity-heading");
   newActivityHeader.innerText = "Current Activity";
 }
 
