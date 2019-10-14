@@ -20,7 +20,9 @@ var secondsDisplay = document.getElementById("seconds-display");
 var countdownTimerText = document.getElementById("countdown-timer");
 var congratsMessage = document.getElementById("congrats-message");
 var logActivityButton = document.getElementById("log-activity-button");
-
+var asideContainer = document.getElementById("aside-container");
+var asideParagraph1 = document.getElementById("aside-paragraph1");
+var asideParagraph2 = document.getElementById("aside-paragraph2");
 
 startButton.addEventListener("click", handleTimerStart);
 activityButton.addEventListener("click", onActivityButtonClick);
@@ -29,6 +31,7 @@ meditateButton.addEventListener("click", styleMeditateButton);
 exerciseButton.addEventListener("click", styleExerciseButton);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
+logActivityButton.addEventListener("click", onLogActivityClick);
 
 function onActivityButtonClick() {
   errorMessage(accomplishInput, accomplishHiddenError);
@@ -42,6 +45,10 @@ function onActivityButtonClick() {
   startingSeconds = parseInt(secondsInput.value);
 }
 
+function onLogActivityClick() {
+   createLogCard();
+}
+
 function handleTimerStart() {
    timer();
 }
@@ -51,6 +58,17 @@ function handleTimerStart() {
 // function stop() {
 //   e.startButton.removeEventListener("click", stop)
 // }
+
+function createLogCard() {
+  asideParagraph1.classList.add("hidden-screen");
+  asideParagraph2.classList.add("hidden-screen");
+  asideContainer.innerHTML += `
+  <div class="log-activity-card">
+    <p class="card-catagory"></p>
+    <p class="card-time">${startingMinutes} MIN ${startingSeconds} SECONDS</p>
+    <p class="card-accomplishment">${accomplishInput.value}</p>
+  </div>`
+}
 
 function timer() {
   var remainingSeconds = startingSeconds;
