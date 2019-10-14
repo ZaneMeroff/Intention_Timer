@@ -1,9 +1,8 @@
 * {
+  color: white;
+  font-family: "Montserrat";
   margin: 0px;
   padding: 0px;
-  font-family: "Montserrat";
-  /* border: 1px solid red; */
-  color: white;
 }
 
 /* *:focus {
@@ -11,9 +10,9 @@
 } */
 
 .clearfix:after{
+  clear: both;
   content: '';
   display: table;
-  clear: both;
 }
 
 body {
@@ -21,17 +20,17 @@ body {
 }
 
 header {
-  text-align: center;
   background-color: #46424D;
   margin: 0px;
+  text-align: center;
 }
 
 h1 {
   color: #CBC9CF;
   font-size: 140%;
+  margin: auto;
   padding: 1%;
   padding-bottom: 10px;
-  margin: auto;
 }
 
 h2{
@@ -41,39 +40,43 @@ h2{
 .h2-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   margin-left:auto;
   margin-right:auto;
+  width: 100%;
   width:1420px;
 }
 
 .new-activity-container {
-  padding-top: 3%;
   padding-left: 2%;
+  padding-top: 3%;
   margin-right: 30px;
 }
 
 .past-activity-container {
   border-left: 2px solid #46424D;
   padding-top: 3%;
-  width: 28.35%;
+  width: 28.3%;
+}
+
+.past-activities-heading {
+  margin-left: 7%;
 }
 
 main {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-left:auto;
-  margin-right:auto;
-  width: 1420px;
   height: 100%;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1420px;
 }
 
 .left-section {
   background-color: #46424D;
-  padding: 3% 7%;
-  margin: 1% 2%;
   border-radius: 4px;
+  margin: 1% 2%;
+  padding: 3% 7%;
   width: 55%;
 }
 
@@ -85,15 +88,15 @@ main {
 .meditate-button,
 .exercise-button {
   background-color: #46424D;
-  border: 1px solid white;
-  width: 20%;
-  height: 55px;
-  background-size: 20px;
-  background-repeat: no-repeat;
   background-position: center top;
-  padding: 3%;
-  font-size: 14px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  border: 1px solid white;
   border-radius: 3px;
+  font-size: 14px;
+  height: 55px;
+  padding: 3%;
+  width: 20%;
 }
 
 .study-button {
@@ -107,20 +110,21 @@ main {
 .exercise-button {
   background-image: url("./assets/exercise.svg");
 }
+
 .catagory-container {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
+  display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding-bottom: 7%;
 }
 
 input {
   background-color: #46424D;
-  border-top: 0px;
+  border-bottom: solid 1px white;
   border-left: 0px;
   border-right: 0px;
-  border-bottom: solid 1px white;
+  border-top: 0px;
   font-size: 16px;
   padding-top: 2%;
 }
@@ -142,8 +146,8 @@ input::-webkit-inner-spin-button {
 
 .minutes-input,
 .seconds-input {
-  margin-top: 10%;
   font-size: 16px;
+  margin-top: 10%;
   width: 100%;
   -webkit-appearance: none;
 }
@@ -160,44 +164,44 @@ input::-webkit-inner-spin-button {
 
 #log-activity-button,
 .start-activity-button {
-  margin-top: 5%;
-  width: 20%;
   background-color: white;
-  color: #2B2733;
-  line-height: 5px;
   border-radius: 3px;
-  padding: 1.5%;
+  color: #2B2733;
   font-size: 50%;
+  line-height: 5px;
+  margin-top: 5%;
+  padding: 1.5%;
+  width: 20%;
 }
 
 aside {
-    padding-top: 2%;
-    border-left: solid 2px #46424D;
-    padding: 2%;
-    width: 355px;
+  border-left: solid 2px #46424D;
+  padding-top: 2%;
+  padding: 2%;
+  width: 355px;
 }
 
 .styleStudyButton {
   color: #B3FD78;
-  border-color: #B3FD78;
   background-image: url(./assets/study-active.svg);
+  border-color: #B3FD78;
 }
 
 .styleMeditateButton {
   color: #C278FD;
-  border-color: #C278FD;
   background-image: url(./assets/meditate-active.svg);
+  border-color: #C278FD;
 }
 
 .styleExerciseButton {
   color: #FD8078;
-  border-color: #FD8078;
   background-image: url(./assets/exercise-active.svg);
+  border-color: #FD8078;
 }
 
 .warning {
-  width: 16px;
   height: 16px;
+  width: 16px;
 }
 
 .warning-message {
@@ -206,15 +210,15 @@ aside {
 }
 
 .timer-screen {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
   background-color: #46424D;
-  padding: 3%;
-  width: 63.3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 1% 2%;
+  padding: 3%;
   padding-bottom: 7%;
+  width: 63.3%;
 }
 
 #countdown-timer {
@@ -225,12 +229,12 @@ aside {
 
 #start-button {
   background-color: #46424D;
-  font-size: 150%;
   border: 2px solid white;
   border-radius: 50%;
-  width: 25%;
+  font-size: 150%;
   height: 200px;
   outline: none;
+  width: 25%;
 }
 
 .log-activity-button {
@@ -256,8 +260,22 @@ aside {
  }
 
  .log-activity-card {
-   height: 70px;
-   width: 100%;
    background-color: #46424D;
    border-radius: 5px;
+   height: 62px;
+   margin-top: 10px;
+   padding: 1%;
+   padding-right: 3%;
+   padding-top: 2%;
+   width: 100%;
+ }
+
+ .card-catagory {
+   border-right: 3px solid white;
+   border-radius: 2px;
+   font-weight: bold;
+ }
+
+ .card-time {
+   margin-bottom: 1%;
  }
