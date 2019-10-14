@@ -162,6 +162,7 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
 }
 
+.create-new-activity-button,
 #log-activity-button,
 .start-activity-button {
   background-color: white;
@@ -176,8 +177,7 @@ input::-webkit-inner-spin-button {
 
 aside {
   border-left: solid 2px #46424D;
-  padding-top: 2%;
-  padding: 2%;
+  padding: 1% 2%;
   width: 355px;
 }
 
@@ -278,4 +278,17 @@ aside {
 
  .card-time {
    margin-bottom: 1%;
+ }
+
+ .create-new-activity-screen {
+   align-items: center;
+   background-color: #46424D;
+   padding: 2% 0% 29% 24%;
+   margin: 1% 2%;
+   width: 44.7%;
+ }
+
+ .create-new-activity-button {
+   font-size: 110%;
+   width: 280px;
  }
