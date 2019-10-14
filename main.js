@@ -35,6 +35,7 @@ studyButton.addEventListener("click", styleStudyButton);
 newActivityButton.addEventListener("click", showNewActivityScreen);
 
 function onActivityButtonClick() {
+  // checkForCatagorySelection();
   errorMessage(accomplishInput, accomplishHiddenError);
   errorMessage(minutesInput, minuteHiddenError);
   errorMessage(secondsInput, secondHiddenError);
@@ -58,10 +59,19 @@ function onLogActivityClick() {
    disableStartButton.disabled = true;
  }
 
-// function checkForCatagorySelection() {
-//   if (studyButton.classList.contains("???????")) {
-//    activityButton.disabled = true;
+//  window.onload = function() {
+//    if (studyButton.classList.contains("not-selected") && exerciseButton.classList.contains("not-selected") && meditateButton.classList.contains("not-selected")) {
+//     activityButton.disabled = true;
 //   }
+// }
+
+// check if true of false on targeted class!!!!!!!!!!!!!!
+
+// function checkForCatagorySelection() {
+//   studyButton.classList.remove("not-selected");
+//   meditateButton.classList.remove("not-selected");
+//   exerciseButton.classList.remove("not-selected");
+//
 // }
 
 function showCompletedActivityScreen() {
@@ -167,6 +177,8 @@ function styleStudyButton() {
     studyButton.classList.toggle("styleStudyButton");
     meditateButton.classList.remove("styleMeditateButton");
     exerciseButton.classList.remove("styleExerciseButton");
+    // studyButton.classList.toggle("not-selected");
+    // activityButton.disabled = false;
     startButton.style.borderColor = "#B3FD78";
     chosenCatagory = "Study";
 }
@@ -175,6 +187,8 @@ function styleMeditateButton() {
     meditateButton.classList.toggle("styleMeditateButton");
     studyButton.classList.remove("styleStudyButton");
     exerciseButton.classList.remove("styleExerciseButton");
+    // meditateButton.classList.toggle("not-selected");
+    // activityButton.disabled = false;
     startButton.style.borderColor = "#C278FD";
     chosenCatagory = "Meditate";
 }
@@ -183,6 +197,8 @@ function styleExerciseButton() {
     exerciseButton.classList.toggle("styleExerciseButton");
     studyButton.classList.remove("styleStudyButton");
     meditateButton.classList.remove("styleMeditateButton");
+    // exerciseButton.classList.toggle("not-selected");
+    // activityButton.disabled = false;
     startButton.style.borderColor = "#FD8078";
     chosenCatagory = "Exercise";
 }
