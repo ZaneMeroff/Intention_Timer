@@ -61,6 +61,7 @@ main {
   margin: 2% 4%;
   padding: 6% 12%;
   width: 97%;
+  box-shadow: 5px 5px 10px -5px #000000;
 }
 
 .select-catagory-paragraph {
@@ -227,6 +228,7 @@ aside {
   padding-top: 7%;
   margin: 2% 4%;
   width: 121%;
+  box-shadow: 5px 5px 10px -5px #000000;
 }
 
 #countdown-timer {
@@ -273,6 +275,7 @@ aside {
    text-align: left;
    width: 93%;
    margin-bottom: 2%;
+   box-shadow: 5px 5px 10px -5px #000000;
  }
 
  .card-catagory {
@@ -293,6 +296,7 @@ aside {
    margin: 2% 4%;
    width: 121%;
    padding-top: 5%;
+   box-shadow: 5px 5px 10px -5px #000000;
  }
 
  .create-new-activity-button {
@@ -338,6 +342,10 @@ aside {
 
    .start-activity-button {
      font-size: 10px;
+   }
+
+   .hidden-screen {
+     display: none;
    }
 
    @media screen and (max-width: 500px) {
@@ -407,17 +415,21 @@ aside {
     text-align: center;
   }
 
-  .hidden-screen {
-    display: none;
-  }
-
   .past-activities-heading {
     margin-top: 10px;
     padding-top: 10px;
     border-top: 2px solid #46424D;
-    width: 460px;
+    width: 340px;
   }
 
   .log-activity-card {
     width: 88%;
+  }
+
+  header {
+    width: 335px;
+  }
+
+  .hidden-screen {
+    display: none;
   }
