@@ -3,6 +3,7 @@ var accomplishInput = document.querySelector(".accomplish-input");
 var accomplishText = document.getElementById("user-accomplish-input");
 var activityButton = document.querySelector(".start-activity-button");
 var chosenCatagory = "";
+var completedActivityScreen = document.querySelector(".create-new-activity-screen");
 var congratsMessage = document.getElementById("congrats-message");
 var exerciseButton = document.querySelector(".exercise-button");
 var logActivityButton = document.getElementById("log-activity-button");
@@ -10,6 +11,8 @@ var meditateButton = document.querySelector(".meditate-button");
 var minutesDisplay = document.getElementById("minutes-display");
 var minuteHiddenError = document.getElementById("minute-error-message");
 var minutesInput = document.querySelector(".minutes-input");
+var newActivityButton = document.querySelector(".create-new-activity-button");
+var newActivityHeader = document.querySelector(".new-activity-heading");
 var leftSection = document.querySelector(".left-section");
 var secondHiddenError = document.getElementById("second-error-message");
 var secondsDisplay = document.getElementById("seconds-display");
@@ -19,23 +22,18 @@ var startingMinutes;
 var startingSeconds;
 var studyButton = document.querySelector(".study-button");
 var timerScreen = document.querySelector(".timer-screen");
-var newActivityButton = document.querySelector(".create-new-activity-button");
-var newActivityHeader = document.querySelector(".new-activity-heading");
-var completedActivityScreen = document.querySelector(".create-new-activity-screen");
-var clearForm = document.getElementById("clear-form");
 
 activityButton.addEventListener("click", onActivityButtonClick);
 exerciseButton.addEventListener("click", styleExerciseButton);
 logActivityButton.addEventListener("click", onLogActivityClick);
 meditateButton.addEventListener("click", styleMeditateButton);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
+newActivityButton.addEventListener("click", showNewActivityScreen);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
 startButton.addEventListener("click", onStartClick);
 studyButton.addEventListener("click", styleStudyButton);
-newActivityButton.addEventListener("click", showNewActivityScreen);
 
 function onActivityButtonClick() {
-  // checkForCatagorySelection();
   errorMessage(accomplishInput, accomplishHiddenError);
   errorMessage(minutesInput, minuteHiddenError);
   errorMessage(secondsInput, secondHiddenError);
@@ -59,21 +57,6 @@ function onLogActivityClick() {
    disableStartButton.disabled = true;
  }
 
-//  window.onload = function() {
-//    if (studyButton.classList.contains("not-selected") && exerciseButton.classList.contains("not-selected") && meditateButton.classList.contains("not-selected")) {
-//     activityButton.disabled = true;
-//   }
-// }
-
-// check if true of false on targeted class!!!!!!!!!!!!!!
-
-// function checkForCatagorySelection() {
-//   studyButton.classList.remove("not-selected");
-//   meditateButton.classList.remove("not-selected");
-//   exerciseButton.classList.remove("not-selected");
-//
-// }
-
 function showCompletedActivityScreen() {
   completedActivityScreen.classList.remove("hidden-screen");
   timerScreen.classList.add("hidden-screen");
@@ -81,6 +64,7 @@ function showCompletedActivityScreen() {
 }
 
 function showNewActivityScreen() {
+  var clearForm = document.getElementById("clear-form");
   completedActivityScreen.classList.add("hidden-screen");
   leftSection.classList.remove("hidden-screen");
   newActivityHeader.innerText = "New Activity";
@@ -177,30 +161,35 @@ function styleStudyButton() {
     studyButton.classList.toggle("styleStudyButton");
     meditateButton.classList.remove("styleMeditateButton");
     exerciseButton.classList.remove("styleExerciseButton");
-    // studyButton.classList.toggle("not-selected");
-    // activityButton.disabled = false;
     startButton.style.borderColor = "#B3FD78";
     chosenCatagory = "Study";
+    validateCatagory();
 }
 
 function styleMeditateButton() {
     meditateButton.classList.toggle("styleMeditateButton");
     studyButton.classList.remove("styleStudyButton");
     exerciseButton.classList.remove("styleExerciseButton");
-    // meditateButton.classList.toggle("not-selected");
-    // activityButton.disabled = false;
     startButton.style.borderColor = "#C278FD";
     chosenCatagory = "Meditate";
+    validateCatagory();
 }
 
 function styleExerciseButton() {
     exerciseButton.classList.toggle("styleExerciseButton");
     studyButton.classList.remove("styleStudyButton");
     meditateButton.classList.remove("styleMeditateButton");
-    // exerciseButton.classList.toggle("not-selected");
-    // activityButton.disabled = false;
     startButton.style.borderColor = "#FD8078";
     chosenCatagory = "Exercise";
+    validateCatagory();
+}
+
+function validateCatagory() {
+  if (studyButton.classList.contains("styleStudyButton") || meditateButton.classList.contains("styleMeditateButton") || exerciseButton.classList.contains("styleExerciseButton")) {
+    activityButton.disabled = false;
+  } else {
+    activityButton.disabled = true;
+  }
 }
 
 function displayTimer() {
