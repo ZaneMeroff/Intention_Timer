@@ -292,40 +292,47 @@ aside {
    align-items: center;
    background-color: #46424D;
    border-radius: 4px;
-   height: 540px;
+   height: 500px;
    margin: 2% 4%;
    width: 121%;
+   padding-top: 5%;
  }
 
  .create-new-activity-button {
    font-size: 110%;
-   margin-left: 35%;
-   margin-top: 8%;
    width: 280px;
+   display: block;
+   margin: auto;
  }
 
- @media screen and (max-width: 870px) {
+ @media screen and (max-width: 768px) {
    main {
      display: flex;
-     /* flex-direction: column; */
-     /* justify-content: flex-start; */
+     flex-direction: column;
    }
 
    .left-section {
-     width: 30%;
+     width: 160%;
    }
 
    aside {
-     width: 30%;
-     display: inline-block;
+     width: 290%;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     padding-top: 10%;
    }
 
-   .h2-container {
-     width: 50%;
+   .start-activity-button {
+     font-size: 10px;
    }
-
 
    @media screen and (max-width: 425px) {
   .header {
     width: 100%;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
   }
