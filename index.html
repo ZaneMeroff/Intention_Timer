@@ -10,15 +10,11 @@
     <header>
       <h1>INTENTION TIMER</h1>
     </header>
-    <section class="h2-container">
+    <main>
+      <section class="left-section-container">
       <div class="new-activity-container">
         <h2 class="new-activity-heading">New Activity</h2>
       </div>
-      <div class="past-activity-container">
-        <h2 class="past-activities-heading">Past Activites</h2>
-      </div>
-    </section>
-    <main>
       <section class="left-section">
         <p class="select-catagory-paragraph">Select a catagory:</p>
         <div class="catagory-container">
@@ -27,7 +23,7 @@
           <button class="exercise-button not-selected" type="button">Exercise</button>
         </div>
         <form id="clear-form">
-          <p>What would you like to accomplish during this time?</p>
+          <p class="accomplish-paragraph">What would you like to accomplish during this time?</p>
           <input class="accomplish-input" type="text">
           <p class="warning-message" id="accomplish-error-message"><img class="warning" src="./assets/warning.svg" alt="warning icon">A description is required</p>
             <section class="time-container">
@@ -44,7 +40,7 @@
             </section>
         </form>
         <div class="start-button-container">
-          <button class="start-activity-button" type="button">START ACTIVITY</button>
+          <button disabled class="start-activity-button" type="button">START ACTIVITY</button>
         </div>
         </section>
         <section class="timer-screen hidden-screen">
@@ -57,10 +53,16 @@
         <section class="create-new-activity-screen hidden-screen">
           <button type="button" class="create-new-activity-button">CREATE A NEW ACTIVITY</button>
         </section>
+        </section>
+      <section class="right-section">
+        <div class="past-activity-container">
+          <h2 class="past-activities-heading">Past Activites</h2>
+        </div>
       <aside id="aside-container">
         <p id="aside-paragraph1">You haven't logged any activites yet.</p>
         <p id="aside-paragraph2">Complete the form on the left to get started!</p>
       </aside>
+    </section>
     </main>
     <script src="./main.js"></script>
   </body>

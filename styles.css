@@ -5,10 +5,6 @@
   padding: 0px;
 }
 
-/* *:focus {
-  outline: 0;
-} */
-
 .clearfix:after{
   clear: both;
   content: '';
@@ -30,54 +26,41 @@ h1 {
   font-size: 140%;
   margin: auto;
   padding: 1%;
-  padding-bottom: 10px;
 }
 
 h2{
   color: #CBC9CF;
 }
 
-.h2-container {
-  display: flex;
-  justify-content: space-between;
-  margin-left:auto;
-  margin-right:auto;
-  width: 100%;
-  width:1420px;
-}
-
 .new-activity-container {
-  padding-left: 2%;
+  padding-left: 4%;
   padding-top: 3%;
-  margin-right: 30px;
 }
 
 .past-activity-container {
   border-left: 2px solid #46424D;
-  padding-top: 3%;
-  width: 28.3%;
-}
-
-.past-activities-heading {
-  margin-left: 7%;
+  padding-top: 5%;
+  padding-left: 5%;
 }
 
 main {
-  display: flex;
-  flex-direction: row;
   height: 100%;
   justify-content: space-around;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1420px;
+}
+
+.left-section-container {
+  float: left;
+  display: inline;
+  width: 52%;
 }
 
 .left-section {
   background-color: #46424D;
   border-radius: 4px;
-  margin: 1% 2%;
-  padding: 3% 7%;
-  width: 55%;
+  height: 450px;
+  margin: 2% 4%;
+  padding: 6% 12%;
+  width: 97%;
 }
 
 .select-catagory-paragraph {
@@ -94,29 +77,38 @@ main {
   border: 1px solid white;
   border-radius: 3px;
   font-size: 14px;
-  height: 55px;
+  height: 65px;
   padding: 3%;
-  width: 20%;
+  width: 19%;
 }
 
 .study-button {
   background-image: url("./assets/study.svg");
+  background-position: 50% 25%;
+  padding-bottom: 1%;
 }
 
 .meditate-button {
   background-image: url("./assets/meditate.svg");
+  background-position: 50% 25%;
+  padding-bottom: 1%;
 }
 
 .exercise-button {
   background-image: url("./assets/exercise.svg");
+  background-position: 50% 25%;
+  padding-bottom: 1%;
 }
 
 .catagory-container {
-  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-bottom: 7%;
+  padding-bottom: 8%;
+}
+
+.accomplish-paragraph {
+  padding-bottom: 2%;
 }
 
 input {
@@ -127,6 +119,10 @@ input {
   border-top: 0px;
   font-size: 16px;
   padding-top: 2%;
+}
+
+input:focus {
+  outline: none
 }
 
 input::-webkit-outer-spin-button,
@@ -147,7 +143,8 @@ input::-webkit-inner-spin-button {
 .minutes-input,
 .seconds-input {
   font-size: 16px;
-  margin-top: 10%;
+  margin-right: 100px;
+  margin-top: 8%;
   width: 100%;
   -webkit-appearance: none;
 }
@@ -168,17 +165,25 @@ input::-webkit-inner-spin-button {
   background-color: white;
   border-radius: 3px;
   color: #2B2733;
-  font-size: 50%;
+  font-size: 16px;
   line-height: 5px;
   margin-top: 5%;
   padding: 1.5%;
-  width: 20%;
+  width: 23%;
 }
 
 aside {
   border-left: solid 2px #46424D;
-  padding: 1% 2%;
-  width: 355px;
+  padding: 3% 2%;
+  height: 660px;
+  text-align: center;
+}
+
+.right-section {
+  float: right;
+  display: inline-block;
+  height: 670px;
+  width: 33%;
 }
 
 .styleStudyButton {
@@ -201,6 +206,8 @@ aside {
 
 .warning {
   height: 16px;
+  margin-right: 1%;
+  margin-top: 1%;
   width: 16px;
 }
 
@@ -212,13 +219,14 @@ aside {
 .timer-screen {
   align-items: center;
   background-color: #46424D;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 1% 2%;
-  padding: 3%;
-  padding-bottom: 7%;
-  width: 63.3%;
+  float: left;
+  height: 487px;
+  padding-top: 7%;
+  margin: 2% 4%;
+  width: 121%;
 }
 
 #countdown-timer {
@@ -263,11 +271,11 @@ aside {
    background-color: #46424D;
    border-radius: 5px;
    height: 62px;
-   margin-top: 10px;
+   margin: 0px 12px;
    padding: 1%;
-   padding-right: 3%;
    padding-top: 2%;
-   width: 100%;
+   text-align: left;
+   width: 93%;
  }
 
  .card-catagory {
@@ -283,12 +291,48 @@ aside {
  .create-new-activity-screen {
    align-items: center;
    background-color: #46424D;
-   padding: 2% 0% 29% 24%;
-   margin: 1% 2%;
-   width: 44.7%;
+   border-radius: 4px;
+   height: 500px;
+   margin: 2% 4%;
+   width: 121%;
+   padding-top: 5%;
  }
 
  .create-new-activity-button {
    font-size: 110%;
    width: 280px;
+   display: block;
+   margin: auto;
  }
+
+ @media screen and (max-width: 768px) {
+   main {
+     display: flex;
+     flex-direction: column;
+   }
+
+   .left-section {
+     width: 160%;
+   }
+
+   aside {
+     width: 290%;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     padding-top: 10%;
+   }
+
+   .start-activity-button {
+     font-size: 10px;
+   }
+
+   @media screen and (max-width: 425px) {
+  .header {
+    width: 100%;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
