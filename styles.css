@@ -11,6 +11,21 @@
   display: table;
 }
 
+.StudyTag {
+  border-right: 3px solid #B3FD78;
+  font-weight: 800;
+}
+
+.MeditateTag {
+  border-right: 3px solid #C278FD;
+  font-weight: 800;
+}
+
+.ExerciseTag {
+  border-right: 3px solid #FD8078;
+  font-weight: 800;
+}
+
 body {
   background-color: #2B2733;
 }
@@ -128,8 +143,8 @@ input:focus {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .start-button-container {
@@ -175,22 +190,22 @@ input::-webkit-inner-spin-button {
 
 aside {
   border-left: solid 2px #46424D;
-  padding: 3% 2%;
   height: 660px;
+  padding: 3% 2%;
   text-align: center;
 }
 
 .right-section {
-  float: right;
   display: inline-block;
+  float: right;
   height: 670px;
   width: 33%;
 }
 
 .styleStudyButton {
-  color: #B3FD78;
   background-image: url(./assets/study-active.svg);
   border-color: #B3FD78;
+  color: #B3FD78;
 }
 
 .styleMeditateButton {
@@ -221,6 +236,7 @@ aside {
   align-items: center;
   background-color: #46424D;
   border-radius: 4px;
+  box-shadow: 5px 5px 10px -5px #000000;
   display: flex;
   flex-direction: column;
   float: left;
@@ -228,7 +244,6 @@ aside {
   padding-top: 7%;
   margin: 2% 4%;
   width: 121%;
-  box-shadow: 5px 5px 10px -5px #000000;
 }
 
 #countdown-timer {
@@ -256,180 +271,179 @@ aside {
 }
 
 #congrats-message {
-   font-size: 200%;
-   font-weight: bold;
-   margin-bottom: 5%;
+ font-size: 200%;
+ font-weight: bold;
+ margin-bottom: 5%;
+}
+
+#log-activity-button {
+  font-size: 110%;
+}
+
+.log-activity-card {
+  background-color: #46424D;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px -5px #000000;
+  height: 62px;
+  margin: 0px 12px;
+  margin-bottom: 2%;
+  padding: 1%;
+  padding-top: 2%;
+  text-align: left;
+  width: 93%;
+}
+
+.card-catagory {
+ border-radius: 2px;
+ font-weight: bolder;
+}
+
+.card-time {
+  margin-bottom: 1%;
  }
 
- #log-activity-button {
-   font-size: 110%;
- }
+.create-new-activity-screen {
+  align-items: center;
+  background-color: #46424D;
+  border-radius: 4px;
+  box-shadow: 5px 5px 10px -5px #000000;
+  height: 500px;
+  margin: 2% 4%;
+  padding-top: 5%;
+  width: 121%;
+}
 
- .log-activity-card {
-   background-color: #46424D;
-   border-radius: 5px;
-   height: 62px;
-   margin: 0px 12px;
-   padding: 1%;
-   padding-top: 2%;
-   text-align: left;
-   width: 93%;
-   margin-bottom: 2%;
-   box-shadow: 5px 5px 10px -5px #000000;
- }
+.create-new-activity-button {
+  display: block;
+  font-size: 110%;
+  margin: auto;
+  width: 280px;
+}
 
- .card-catagory {
-   border-right: 3px solid white;
-   border-radius: 2px;
-   font-weight: bold;
- }
+.hidden-screen {
+  display: none;
+}
 
- .card-time {
-   margin-bottom: 1%;
- }
+@media screen and (max-width: 1140px) {
+.start-activity-button {
+  font-size: 30%;
+}
 
- .create-new-activity-screen {
-   align-items: center;
-   background-color: #46424D;
-   border-radius: 4px;
-   height: 500px;
-   margin: 2% 4%;
-   width: 121%;
-   padding-top: 5%;
-   box-shadow: 5px 5px 10px -5px #000000;
- }
+.minutes-input,
+.seconds-input {
+  margin-right: 50px;
+}
 
- .create-new-activity-button {
-   font-size: 110%;
-   width: 280px;
-   display: block;
-   margin: auto;
- }
+@media screen and (max-width: 768px) {
+main {
+ display: flex;
+ flex-direction: column;
+}
 
- .hidden-screen {
-   display: none;
- }
+.left-section {
+  display: block;
+  height: 100%;
+  width: 160%;
+}
 
- @media screen and (max-width: 1140px) {
-   .start-activity-button {
-     font-size: 30%;
-   }
+aside {
+  width: 290%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+}
 
-   .minutes-input,
-   .seconds-input {
-     margin-right: 50px;
-   }
+.start-activity-button {
+  font-size: 10px;
+}
 
- @media screen and (max-width: 768px) {
-   main {
-     display: flex;
-     flex-direction: column;
-   }
+.hidden-screen {
+  display: none;
+}
 
-   .left-section {
-     width: 160%;
-     display: block;
-     height: 100%
-   }
+@media screen and (max-width: 500px) {
+.left-section {
+  display: flex;
+  flex-flow: column nowrap;
+  float: none;
+  justify-content: center;
+  width: 100%;
+}
 
-   aside {
-     width: 290%;
-     display: block;
-     margin-left: auto;
-     margin-right: auto;
-     padding-top: 10%;
-   }
+aside {
+  width: 207%;
+}
 
-   .start-activity-button {
-     font-size: 10px;
-   }
+.catagory-container {
+  display: flex;
+  flex-direction: column;
+}
 
-   .hidden-screen {
-     display: none;
-   }
+.study-button,
+.meditate-button,
+.exercise-button {
+  background-position: 25% 50%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 15%;
+  width: 75%;
+}
 
-   @media screen and (max-width: 500px) {
-   .left-section {
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    float: none;
-  }
+.catagory-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 23%;
+}
 
-  aside {
-    width: 207%;
-  }
+.not-selected {
+  display: inline;
+}
 
-  .catagory-container {
-    display: flex;
-    flex-direction: column;
-  }
+.create-new-activity-button,
+#log-activity-button,
+.start-activity-button {
+  font-size: 20px;
+  height: 35px;
+  margin: auto;
+  margin-bottom: 5%;
+  width: 85%;
+}
 
-  .study-button,
-  .meditate-button,
-  .exercise-button {
-    width: 75%;
-    height: 40px;
-    margin-bottom: 10px;
-    background-position: 25% 50%;
-    padding-left: 15%;
-  }
+.minutes-input,
+.seconds-input {
+  padding: 5%;
+  width: 75%;
+}
 
-  .catagory-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 23%;
-  }
+h2 {
+  font-size: 20px;
+}
 
-  .not-selected {
-    display: inline;
-  }
+#start-button {
+  width: 62%;
+}
 
-  .create-new-activity-button,
-  #log-activity-button,
-  .start-activity-button {
-    font-size: 20px;
-    width: 85%;
-    height: 35px;
-    margin: auto;
-    margin-bottom: 5%;
-  }
+#congrats-message {
+  font-size: 30px;
+  text-align: center;
+}
 
-  .minutes-input,
-  .seconds-input {
-    width: 75%;
-    padding: 5%;
-  }
+.past-activities-heading {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 2px solid #46424D;
+  width: 340px;
+}
 
-  h2 {
-    font-size: 20px;
-  }
+.log-activity-card {
+  width: 88%;
+}
 
-  #start-button {
-    width: 62%;
-  }
+header {
+  width: 335px;
+}
 
-  #congrats-message {
-    font-size: 30px;
-    text-align: center;
-  }
-
-  .past-activities-heading {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 2px solid #46424D;
-    width: 340px;
-  }
-
-  .log-activity-card {
-    width: 88%;
-  }
-
-  header {
-    width: 335px;
-  }
-
-  .hidden-screen {
-    display: none;
-  }
+.hidden-screen {
+  display: none;
+}
