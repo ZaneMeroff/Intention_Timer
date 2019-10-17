@@ -47,7 +47,6 @@ function onActivityButtonClick() {
 
 function onLogActivityClick() {
   createLogCard();
-  // styleChosenCatagory();
   showCompletedActivityScreen();
 }
 
@@ -87,19 +86,6 @@ function createLogCard() {
     <p class="card-accomplishment">${accomplishInput.value}</p>
   </div>`
 }
-
-// function styleChosenCatagory() {
-//   var cardCatatgoryBorder = document.querySelectorAll(".card-catagory");
-//   for (var i = 0; i < cardCatatgoryBorder.length; i++) {
-//     if (chosenCatagory === "Study") {
-//       cardCatatgoryBorder[i].style.borderColor = "#B3FD78";
-//     } else if (chosenCatagory === "Meditate") {
-//       cardCatatgoryBorder[i].style.borderColor = "#C278FD";
-//     } else {
-//       cardCatatgoryBorder[i].style.borderColor = "#FD8078";
-//     }
-//   }
-// }
 
 function timer() {
   var countdownTimerText = document.getElementById("countdown-timer");
@@ -164,7 +150,7 @@ function styleStudyButton() {
   meditateButton.classList.remove("styleMeditateButton");
   exerciseButton.classList.remove("styleExerciseButton");
   startButton.style.borderColor = "#B3FD78";
-  chosenCatagory = "study";
+  chosenCatagory = "Study";
   validateCatagory();
 }
 
@@ -173,7 +159,7 @@ function styleMeditateButton() {
   studyButton.classList.remove("styleStudyButton");
   exerciseButton.classList.remove("styleExerciseButton");
   startButton.style.borderColor = "#C278FD";
-  chosenCatagory = "meditate";
+  chosenCatagory = "Meditate";
   validateCatagory();
 }
 
@@ -182,7 +168,7 @@ function styleExerciseButton() {
   studyButton.classList.remove("styleStudyButton");
   meditateButton.classList.remove("styleMeditateButton");
   startButton.style.borderColor = "#FD8078";
-  chosenCatagory = "exercise";
+  chosenCatagory = "Exercise";
   validateCatagory();
 }
 
