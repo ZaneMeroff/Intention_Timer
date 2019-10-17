@@ -6,6 +6,7 @@ var chosenCatagory = "";
 var completedActivityScreen = document.querySelector(".create-new-activity-screen");
 var congratsMessage = document.getElementById("congrats-message");
 var exerciseButton = document.querySelector(".exercise-button");
+var leftSection = document.querySelector(".left-section");
 var logActivityButton = document.getElementById("log-activity-button");
 var meditateButton = document.querySelector(".meditate-button");
 var minutesDisplay = document.getElementById("minutes-display");
@@ -13,7 +14,6 @@ var minuteHiddenError = document.getElementById("minute-error-message");
 var minutesInput = document.querySelector(".minutes-input");
 var newActivityButton = document.querySelector(".create-new-activity-button");
 var newActivityHeader = document.querySelector(".new-activity-heading");
-var leftSection = document.querySelector(".left-section");
 var secondHiddenError = document.getElementById("second-error-message");
 var secondsDisplay = document.getElementById("seconds-display");
 var secondsInput = document.querySelector(".seconds-input");
@@ -46,9 +46,9 @@ function onActivityButtonClick() {
 }
 
 function onLogActivityClick() {
-   createLogCard();
-   styleChosenCatagory();
-   showCompletedActivityScreen();
+  createLogCard();
+  // styleChosenCatagory();
+  showCompletedActivityScreen();
 }
 
  function onStartClick() {
@@ -82,22 +82,24 @@ function createLogCard() {
   asideParagraph2.classList.add("hidden-screen");
   asideContainer.innerHTML += `
   <div class="log-activity-card">
-    <p class="card-catagory">${chosenCatagory}</p>
+    <p class="${chosenCatagory}Tag card-catagory">${chosenCatagory}</p>
     <p class="card-time">${startingMinutes} MIN ${startingSeconds} SECONDS</p>
     <p class="card-accomplishment">${accomplishInput.value}</p>
   </div>`
 }
 
-function styleChosenCatagory() {
-  var cardCatatgoryBorder = document.querySelector(".card-catagory");
-  if (chosenCatagory === "Study") {
-  cardCatatgoryBorder.style.borderColor = "#B3FD78";
-  } else if (chosenCatagory === "Meditate") {
-  cardCatatgoryBorder.style.borderColor = "#C278FD";
-  } else {
-    cardCatatgoryBorder.style.borderColor = "#FD8078";
-   }
-}
+// function styleChosenCatagory() {
+//   var cardCatatgoryBorder = document.querySelectorAll(".card-catagory");
+//   for (var i = 0; i < cardCatatgoryBorder.length; i++) {
+//     if (chosenCatagory === "Study") {
+//       cardCatatgoryBorder[i].style.borderColor = "#B3FD78";
+//     } else if (chosenCatagory === "Meditate") {
+//       cardCatatgoryBorder[i].style.borderColor = "#C278FD";
+//     } else {
+//       cardCatatgoryBorder[i].style.borderColor = "#FD8078";
+//     }
+//   }
+// }
 
 function timer() {
   var countdownTimerText = document.getElementById("countdown-timer");
@@ -158,30 +160,30 @@ function acceptNumbersOnly(event) {
 }
 
 function styleStudyButton() {
-    studyButton.classList.toggle("styleStudyButton");
-    meditateButton.classList.remove("styleMeditateButton");
-    exerciseButton.classList.remove("styleExerciseButton");
-    startButton.style.borderColor = "#B3FD78";
-    chosenCatagory = "Study";
-    validateCatagory();
+  studyButton.classList.toggle("styleStudyButton");
+  meditateButton.classList.remove("styleMeditateButton");
+  exerciseButton.classList.remove("styleExerciseButton");
+  startButton.style.borderColor = "#B3FD78";
+  chosenCatagory = "study";
+  validateCatagory();
 }
 
 function styleMeditateButton() {
-    meditateButton.classList.toggle("styleMeditateButton");
-    studyButton.classList.remove("styleStudyButton");
-    exerciseButton.classList.remove("styleExerciseButton");
-    startButton.style.borderColor = "#C278FD";
-    chosenCatagory = "Meditate";
-    validateCatagory();
+  meditateButton.classList.toggle("styleMeditateButton");
+  studyButton.classList.remove("styleStudyButton");
+  exerciseButton.classList.remove("styleExerciseButton");
+  startButton.style.borderColor = "#C278FD";
+  chosenCatagory = "meditate";
+  validateCatagory();
 }
 
 function styleExerciseButton() {
-    exerciseButton.classList.toggle("styleExerciseButton");
-    studyButton.classList.remove("styleStudyButton");
-    meditateButton.classList.remove("styleMeditateButton");
-    startButton.style.borderColor = "#FD8078";
-    chosenCatagory = "Exercise";
-    validateCatagory();
+  exerciseButton.classList.toggle("styleExerciseButton");
+  studyButton.classList.remove("styleStudyButton");
+  meditateButton.classList.remove("styleMeditateButton");
+  startButton.style.borderColor = "#FD8078";
+  chosenCatagory = "exercise";
+  validateCatagory();
 }
 
 function validateCatagory() {
